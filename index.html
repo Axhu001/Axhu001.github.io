@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashutosh Vishwakarma | Engineering Portfolio</title>
+  <title>Ashutosh Vishwakarma | Portfolio</title>
   <style>
     :root {
       --primary-blue: #38bdf8;
@@ -24,7 +24,17 @@
       text-align: center;
       border-bottom: 3px solid var(--primary-blue);
     }
-    .subtitle { color: var(--primary-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    .subtitle { 
+      color: var(--primary-blue); 
+      font-weight: bold; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      margin-top: 10px;
+    }
+    .institution {
+      margin-top: 5px;
+      font-size: 1.1rem;
+    }
     
     section { max-width: 1000px; margin: auto; padding: 2rem 1rem; }
     h2 { color: var(--primary-blue); border-bottom: 1px solid #334155; padding-bottom: 10px; }
@@ -50,22 +60,22 @@
 
 <header>
   <h1>Ashutosh Vishwakarma</h1>
-  <p class="subtitle">M.Tech Thermal Engineering | CFD & Heat Transfer Specialist</p>
-  <p>IIT (ISM) Dhanbad | B.Tech Mechanical Engineering</p>
+  <p class="subtitle">M.Tech Thermal Engineering</p>
+  <p class="institution">IIT (ISM) Dhanbad | B.Tech Mechanical Engineering</p>
 </header>
 
 <section id="skills">
   <h2>🛠️ Technical Skills</h2>
   <div class="card">
     <div class="skill-container">
-      <span class="skill-tag">ANSYS Fluent</span>
-      <span class="skill-tag">CFD Analysis</span>
+      <span class="skill-tag">Ansys (Fluent, Geometry, Meshing)</span>
       <span class="skill-tag">SolidWorks</span>
-      <span class="skill-tag">MATLAB</span>
-      <span class="skill-tag">Finite Element Analysis (FEA)</span>
+      <span class="skill-tag">Abaqus</span>
+      <span class="skill-tag">CFD & FEA Analysis</span>
+      <span class="skill-tag">Thermodynamics & Fluid Mechanics</span>
+      <span class="skill-tag">Theory of Machines</span>
+      <span class="skill-tag">IC Engines</span>
       <span class="skill-tag">Heat Transfer</span>
-      <span class="skill-tag">Thermodynamics</span>
-      <span class="skill-tag">Composite Materials</span>
     </div>
   </div>
 </section>
@@ -74,23 +84,22 @@
   <h2>🚀 Projects</h2>
   
   <div class="card">
-    <h3>Performance Evaluation of Savonius Wind Turbine (M.Tech)</h3>
-    <p>Numerical investigation into vertical-axis wind turbine (VAWT) efficiency for urban environments.</p>
-    
-    <ul>
-      <li>Used <strong>Sliding Mesh</strong> and MRF techniques in ANSYS Fluent.</li>
-      <li>Optimized blade geometry to maximize Power Coefficient ($C_p$).</li>
-      <li>Extracted torque characteristics across various Tip Speed Ratios (TSR).</li>
+    <h3>Performance Evaluation of the Savonius Wind Turbine (M.Tech)</h3>
+    <p>Evaluating Savonius wind turbine performance using CFD simulations to analyze blade modifications and deflectors.</p>
+        <ul>
+      <li>Utilized Ansys for geometry creation and simulation analysis.</li>
+      <li>Investigated blade profiles and performance metrics.</li>
+      <li>Conducted research on VAWT components and materials.</li>
     </ul>
   </div>
 
   <div class="card">
-    <h3>Sugarcane Bagasse & Plastic Composite (B.Tech)</h3>
-    <p>Developed an eco-friendly thermal insulation material as a sustainable alternative to PVC.</p>
+    <h3>Composite Fabrication from Sugarcane Bagasse (B.Tech)</h3>
+    <p>Developed a sustainable composite material using waste plastic and bagasse for domestic thermal insulation.</p>
     <ul>
-      <li>Fabricated composite using bagasse fibers (reinforcement) and waste plastic (matrix).</li>
-      <li>Analyzed performance using <strong>ANSYS</strong> to validate lower thermal conductivity.</li>
-      <li>Achieved significant reduction in material density compared to conventional PVC.</li>
+      <li>Reinforced waste plastic matrix with sugarcane bagasse fibers.</li>
+      <li>Performed comparative analysis against PVC using Ansys.</li>
+      <li>Achieved lower density and improved thermal insulation properties.</li>
     </ul>
   </div>
 </section>
@@ -99,16 +108,20 @@
   <h2>🏆 Achievements & Certifications</h2>
   <div class="card">
     <div class="achievement-item">
+      <strong>Academic:</strong>
+      <p>B.Tech in Mechanical Engineering (2021) with 8.21 CGPA from REC Banda.</p>
+    </div>
+    <div class="achievement-item">
       <strong>NPTEL Certifications:</strong>
-      <p>Successfully completed 12-week courses in <em>Heat Transfer, Fluid Mechanics,</em> and <em>Introduction to Manufacturing Science</em>.</p>
+      <p>CFD for Incompressible Flows, IC Engines, Heat Transfer, Fluid Mechanics, and Manufacturing Science.</p>
     </div>
     <div class="achievement-item">
-      <strong>Technical Workshops:</strong>
-      <p>Automation & Robotics (NIE Mysore), Manufacturing Processes (IIT Kanpur), and Vehicle Designing (IIT BHU).</p>
+      <strong>Professional Training:</strong>
+      <p>Certified in Abaqus (Udemy, 2025), Ansys (2020), and SolidWorks (2019).</p>
     </div>
     <div class="achievement-item">
-      <strong>Academic Excellence:</strong>
-      <p>B.Tech Graduated with 8.21 CGPA from Rajkiya Engineering College Banda.</p>
+      <strong>Workshops:</strong>
+      <p>Participated in workshops at IIT Kanpur (Manufacturing Processes), IIT BHU (Automobile Mechanics), and REC Banda (Wireless Robotics).</p>
     </div>
   </div>
 </section>
