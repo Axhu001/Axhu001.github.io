@@ -3,95 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ashutosh Vishwakarma | CFD Portfolio</title>
+  <title>Ashutosh Vishwakarma | Engineering Portfolio</title>
   <style>
+    :root {
+      --primary-blue: #38bdf8;
+      --bg-dark: #0f172a;
+      --card-bg: #1e293b;
+      --text-gray: #94a3b8;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
+      background: var(--bg-dark);
       color: #e5e7eb;
       line-height: 1.6;
     }
     header {
       background: #020617;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
+      border-bottom: 3px solid var(--primary-blue);
     }
-    h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-    p.subtitle {
-      color: #94a3b8;
-      margin-top: 0.5rem;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
+    .subtitle { color: var(--primary-blue); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+    
+    section { max-width: 1000px; margin: auto; padding: 2rem 1rem; }
+    h2 { color: var(--primary-blue); border-bottom: 1px solid #334155; padding-bottom: 10px; }
+    
     .card {
-      background: #020617;
-      border-radius: 10px;
+      background: var(--card-bg);
+      border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
-    h2 {
-      color: #38bdf8;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #020617;
-      color: #94a3b8;
-    }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
+    
+    .skill-container { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-tag { background: #0ea5e9; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
+    
+    .achievement-item { border-left: 3px solid var(--primary-blue); padding-left: 15px; margin-bottom: 15px; }
+    
+    footer { text-align: center; padding: 2rem; background: #020617; margin-top: 2rem; }
+    a { color: var(--primary-blue); text-decoration: none; font-weight: bold; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Ashutosh Vishwakarma</h1>
-  <p class="subtitle">M.Tech Thermal Engineering | CFD & Heat Transfer</p>
+  <p class="subtitle">M.Tech Thermal Engineering | CFD & Heat Transfer Specialist</p>
+  <p>IIT (ISM) Dhanbad | B.Tech Mechanical Engineering</p>
 </header>
 
-<section>
+<section id="skills">
+  <h2>🛠️ Technical Skills</h2>
   <div class="card">
-    <h2>🌪️Performance Evaluation of a Savonius Wind Turbine </h2>
-    <p><strong>Objective:</strong> To numerically evaluate the performance of different Savonius wind turbine blade geometries and identify the configuration with maximum power coefficient and torque.</p>
+    <div class="skill-container">
+      <span class="skill-tag">ANSYS Fluent</span>
+      <span class="skill-tag">CFD Analysis</span>
+      <span class="skill-tag">SolidWorks</span>
+      <span class="skill-tag">MATLAB</span>
+      <span class="skill-tag">Finite Element Analysis (FEA)</span>
+      <span class="skill-tag">Heat Transfer</span>
+      <span class="skill-tag">Thermodynamics</span>
+      <span class="skill-tag">Composite Materials</span>
+    </div>
+  </div>
+</section>
 
-    <p><strong>Tools:</strong> ANSYS Fluent, SolidWorks, MATLAB</p>
-
-    <p><strong>Methodology:</strong></p>
+<section id="projects">
+  <h2>🚀 Projects</h2>
+  
+  <div class="card">
+    <h3>Performance Evaluation of Savonius Wind Turbine (M.Tech)</h3>
+    <p>Numerical investigation into vertical-axis wind turbine (VAWT) efficiency for urban environments.</p>
+    
     <ul>
-      <li>2D Savonius rotor geometries with different blade profiles</li>
-      <li>Rotating reference frame and sliding mesh simulations</li>
-      <li>Torque and power coefficient extraction</li>
-      <li>Flow field visualization and wake analysis</li>
+      <li>Used <strong>Sliding Mesh</strong> and MRF techniques in ANSYS Fluent.</li>
+      <li>Optimized blade geometry to maximize Power Coefficient ($C_p$).</li>
+      <li>Extracted torque characteristics across various Tip Speed Ratios (TSR).</li>
     </ul>
+  </div>
 
-    <p><strong>Key Outcomes:</strong></p>
+  <div class="card">
+    <h3>Sugarcane Bagasse & Plastic Composite (B.Tech)</h3>
+    <p>Developed an eco-friendly thermal insulation material as a sustainable alternative to PVC.</p>
     <ul>
-      <li>Identified optimal blade profile based on Cp</li>
-      <li>Observed strong vortex interaction on returning blade</li>
-      <li>Numerical trends matched literature results</li>
+      <li>Fabricated composite using bagasse fibers (reinforcement) and waste plastic (matrix).</li>
+      <li>Analyzed performance using <strong>ANSYS</strong> to validate lower thermal conductivity.</li>
+      <li>Achieved significant reduction in material density compared to conventional PVC.</li>
     </ul>
+  </div>
+</section>
 
-    <p>
-      📁 <a href="https://github.com/Axhu001/Axhu001.github.io" target="_blank">View Project Repository</a>
-    </p>
+<section id="achievements">
+  <h2>🏆 Achievements & Certifications</h2>
+  <div class="card">
+    <div class="achievement-item">
+      <strong>NPTEL Certifications:</strong>
+      <p>Successfully completed 12-week courses in <em>Heat Transfer, Fluid Mechanics,</em> and <em>Introduction to Manufacturing Science</em>.</p>
+    </div>
+    <div class="achievement-item">
+      <strong>Technical Workshops:</strong>
+      <p>Automation & Robotics (NIE Mysore), Manufacturing Processes (IIT Kanpur), and Vehicle Designing (IIT BHU).</p>
+    </div>
+    <div class="achievement-item">
+      <strong>Academic Excellence:</strong>
+      <p>B.Tech Graduated with 8.21 CGPA from Rajkiya Engineering College Banda.</p>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Ashutosh Vishwakarma | CFD Portfolio
+  <p>© 2026 Ashutosh Vishwakarma | <a href="https://github.com/Axhu001/Axhu001.github.io">GitHub Portfolio</a></p>
 </footer>
 
 </body>
