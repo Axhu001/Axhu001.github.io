@@ -4,60 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashutosh Vishwakarma | Portfolio</title>
+
   <style>
     :root {
-      --primary-blue: #38bdf8;
-      --bg-dark: #0f172a;
-      --card-bg: #1e293b;
-      --text-main: #e5e7eb;
-      --text-muted: #94a3b8; 
+      --primary-blue: #2563eb;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: var(--bg-dark);
+      background: var(--bg-light);
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    /* Professional Header Styling */
     header {
-      background: linear-gradient(145deg, #020617 0%, #0f172a 100%);
-      padding: 4.5rem 1rem;
+      background: #ffffff;
+      padding: 3.5rem 1rem;
       text-align: center;
       border-bottom: 2px solid var(--primary-blue);
     }
 
     h1 {
       margin: 0;
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 800;
-      letter-spacing: -1.5px;
-      color: #ffffff;
-      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      color: var(--text-main);
     }
 
     .degree-line-1 {
       color: var(--primary-blue);
-      font-weight: 700;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin: 20px 0 8px 0;
+      font-weight: 600;
+      margin-top: 15px;
     }
 
     .degree-line-2 {
       color: var(--text-muted);
-      font-size: 1.05rem;
-      font-weight: 500;
-      margin: 0;
-      letter-spacing: 0.5px;
     }
 
-    .highlight { color: #ffffff; }
-
-    /* Layout Sections */
     section {
       max-width: 1000px;
       margin: auto;
@@ -66,70 +55,66 @@
 
     h2 {
       color: var(--primary-blue);
-      font-size: 1.8rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 10px;
-      margin-top: 0;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 1.5rem;
     }
 
     .card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 2rem;
+      border-radius: 10px;
+      padding: 1.8rem;
       margin-bottom: 2rem;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-      border: 1px solid #334155;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    /* Skills Grid */
     .skill-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .skill-tag {
-      background: #0ea5e9;
-      color: white;
-      padding: 6px 16px;
-      border-radius: 25px;
-      font-size: 0.9rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
       font-weight: 600;
     }
 
-    /* Achievement List */
-    .achievement-item {
-      border-left: 4px solid var(--primary-blue);
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-
-    .achievement-item strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-    }
-
     ul {
-      padding-left: 1.5rem;
+      padding-left: 1.3rem;
     }
 
     li {
       margin-bottom: 8px;
     }
 
+    img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .img-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
     footer {
       text-align: center;
-      padding: 3rem;
-      background: #020617;
+      padding: 2rem;
+      background: #ffffff;
       color: var(--text-muted);
-      border-top: 1px solid #334155;
+      border-top: 1px solid var(--border);
     }
 
     a {
       color: var(--primary-blue);
       text-decoration: none;
-      transition: 0.3s;
     }
 
     a:hover {
@@ -137,89 +122,81 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Ashutosh Vishwakarma</h1>
   <p class="degree-line-1">
-    M.Tech Thermal Engineering, <span class="highlight">IIT (ISM) Dhanbad</span>
+    M.Tech Thermal Engineering — IIT (ISM) Dhanbad
   </p>
   <p class="degree-line-2">
-    B.Tech Mechanical Engineering, <span class="highlight">REC, Banda</span>
+    B.Tech Mechanical Engineering — REC, Banda
   </p>
 </header>
 
-<section id="skills">
-  <h2>🛠️ Technical Skills</h2>
+<section>
+  <h2>Technical Skills</h2>
   <div class="card">
     <div class="skill-container">
-      <span class="skill-tag">Ansys (Fluent, Geometry, Meshing)</span>
-      <span class="skill-tag">SolidWorks</span>
+      <span class="skill-tag">ANSYS Fluent</span>
       <span class="skill-tag">Abaqus</span>
-      <span class="skill-tag">CFD & FEA</span>
-      <span class="skill-tag">Thermodynamics</span>
-      <span class="skill-tag">Fluid Mechanics</span>
-      <span class="skill-tag">Theory of Machines</span>
+      <span class="skill-tag">SolidWorks</span>
+      <span class="skill-tag">CFD</span>
+      <span class="skill-tag">FEA</span>
       <span class="skill-tag">Heat Transfer</span>
+      <span class="skill-tag">Fluid Mechanics</span>
     </div>
   </div>
 </section>
 
-<section id="projects">
-  <h2>🚀 Projects</h2>
+<section>
+  <h2>Projects</h2>
   
   <div class="card">
-    <div class="card">
-  <h2>🎓 Academic Projects</h2>
 
-  <h3>M.Tech (2024–2026)</h3>
-  <p><strong>Performance Evaluation of the Savonius Wind Turbine</strong></p>
-  <ul>
-    <li>Performed 2D transient CFD simulations in ANSYS Fluent using k-ω SST turbulence model and sliding mesh technique</li>
-    <li>Improved power coefficient from 0.228 at TSR 1.0 to 0.276 at TSR 1.2 (21% enhancement)</li>
-    <li>Further increased Cp to 0.385 at TSR 1.4 using deflector-assisted design (69% improvement)</li>
-    <li>Analyzed torque variation, pressure contours, and transient flow behavior</li>
-  </ul>
-      <h3>📊 Results & Visualization</h3>
+    <h3>Savonius Wind Turbine CFD Analysis</h3>
+    <p><strong>Method:</strong> 2D transient CFD using k-ω SST model with sliding mesh in ANSYS Fluent.</p>
 
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-  <img src="velocity.png" width="100%" style="border-radius:10px;">
-  <img src="Cp_vs_TSR.png" width="100%" style="border-radius:10px;">
-</div>
+    <p><strong>Results:</strong></p>
+    <ul>
+      <li>Cp improved from 0.228 → 0.276 (+21%)</li>
+      <li>Further increased to 0.385 (+69%) using deflector</li>
+    </ul>
 
-<p>Velocity contours and Cp vs TSR comparison for performance evaluation.</p>
+    <p><strong>Insight:</strong> Flow redirection increases torque on advancing blade.</p>
 
-  <h3>B.Tech (2020–2021)</h3>
-  <p><strong>Fabrication and Analysis of Composite from Sugarcane Bagasse and Waste Plastic</strong></p>
-  <ul>
-    <li>Developed sandwich-type thermal insulation composite using waste plastic and bagasse</li>
-    <li>Achieved ~50% lower deformation compared to PVC</li>
-    <li>Thermal resistance improved by ~22.96% over PVC</li>
-  </ul>
-</div>
-</section>
-
-<section id="achievements">
-  <h2>🏆 Achievements & Certifications</h2>
-  <div class="card">
-    <div class="achievement-item">
-      <strong>Education & Grades</strong>
-      Completed M.Tech from IIT (ISM) Dhanbad in 2026. Graduated B.Tech with a 8.21 CGPA from REC, Banda in 2021.
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div>
+        <img src="velocity.png">
+        <div class="img-caption">Velocity contour</div>
+      </div>
+      <div>
+        <img src="Cp_vs_TSR.png">
+        <div class="img-caption">Cp vs TSR</div>
+      </div>
     </div>
-    <div class="achievement-item">
-      <strong>NPTEL Certifications</strong>
-      Successfully certified in CFD for Incompressible Flows, IC Engines, Heat Transfer, and Fluid Mechanics.
-    </div>
-    <div class="achievement-item">
-      <strong>Professional Training</strong>
-      Industrial certificates in Abaqus (2025), Ansys (2020), and SolidWorks (2019). Workshops attended at IIT Kanpur and IIT BHU. 
-    </div>
+
+    <hr style="margin:30px 0; border:none; border-top:1px solid var(--border);">
+
+    <h3>Thermal Insulation Composite</h3>
+    <p><strong>Method:</strong> Sandwich composite using bagasse and waste plastic.</p>
+
+    <p><strong>Results:</strong></p>
+    <ul>
+      <li>~50% lower deformation than PVC</li>
+      <li>~23% higher thermal resistance</li>
+    </ul>
+
+    <p><strong>Insight:</strong> Natural fibers improve insulation with reduced cost.</p>
+
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Ashutosh Vishwakarma | <a href="https://github.com/Axhu001/Axhu001.github.io" target="_blank">GitHub Portfolio</a></p>
+  <p>© 2026 Ashutosh Vishwakarma |
+  <a href="https://github.com/Axhu001/Axhu001.github.io" target="_blank">GitHub Portfolio</a></p>
 </footer>
 
 </body>
-</html> 
+</html>
