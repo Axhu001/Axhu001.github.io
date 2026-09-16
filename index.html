@@ -189,7 +189,28 @@
     </ul>
 
     <p><strong>Insight:</strong> Natural fibers improve insulation with reduced cost.</p>
+<hr style="margin:30px 0; border:none; border-top:1px solid var(--border);">
 
+    <h3>Conjugate Heat Transfer (CHT) &amp; Natural Convection Analysis of an Electrical Busbar Enclosure</h3>
+    <p><strong>Method:</strong> Steady-state Conjugate Heat Transfer (CHT) modeling in ANSYS Fluent utilizing a buoyancy-driven Boussinesq model with PRESTO! pressure discretization and inflation boundary layers.</p>
+
+    <p><strong>Results:</strong></p>
+    <ul>
+      <li>Volumetric source: 200,000 W/m³ per busbar (150 W total heat generation across 3 copper busbars)</li>
+      <li>Predicted peak busbar temperature: 516.4 K (243.4°C) with natural chimney draft velocities up to 0.408 m/s</li>
+      <li>Analytical validation via 1st Law energy balance and empirical Churchill-Chu natural convection correlations (predicted 517 K, &lt;0.2% error)</li>
+    </ul>
+
+    <p><strong>Insight:</strong> Thermal stratification creates progressive vertical wake preheating—the top busbar suffers the highest thermal penalty, while the buoyant plume accelerates into a high-speed boundary jet along the enclosure wall.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+      <div>
+        <img src="busbar_mesh_setup.png" alt="Domain Named Selections and Near-Wall Inflation Mesh">
+        <div class="img-caption">Computational domain, boundary allocations, and near-wall inflation mesh</div>
+      </div>
+      <div>
+        <img src="busbar_cfd_results.png" alt="Air Temperature, Full CHT, and Buoyancy-Driven Velocity Field">
+        <div class="img-caption">Air temperature field (300–360 K), Full CHT temperature (300–520 K), and velocity distribution</div>
   </div>
 </section>
 
