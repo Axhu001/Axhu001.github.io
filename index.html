@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ashutosh Vishwakarma | Portfolio</title>
@@ -13,15 +14,23 @@
       --text-main: #1e293b;
       --text-muted: #64748b;
       --border: #e2e8f0;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0369a1;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
       background: var(--bg-light);
       color: var(--text-main);
       line-height: 1.6;
     }
+
+    /* ================= HEADER ================= */
 
     header {
       background: #ffffff;
@@ -41,11 +50,15 @@
       color: var(--primary-blue);
       font-weight: 600;
       margin-top: 15px;
+      margin-bottom: 5px;
     }
 
     .degree-line-2 {
       color: var(--text-muted);
+      margin-top: 0;
     }
+
+    /* ================= SECTIONS ================= */
 
     section {
       max-width: 1000px;
@@ -60,40 +73,68 @@
       margin-bottom: 1.5rem;
     }
 
+    /* ================= CARDS ================= */
+
     .card {
       background: var(--card-bg);
       border-radius: 10px;
       padding: 1.8rem;
       margin-bottom: 2rem;
       border: 1px solid var(--border);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .skill-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .project {
+      margin-bottom: 2.5rem;
     }
 
-    .skill-tag {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
+    .project:last-child {
+      margin-bottom: 0;
     }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin-top: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    /* ================= PROJECT DIVIDER ================= */
+
+    .project-divider {
+      margin: 2.5rem 0;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ================= LISTS ================= */
 
     ul {
       padding-left: 1.3rem;
+      margin-top: 0.5rem;
     }
 
     li {
       margin-bottom: 8px;
     }
 
-    img {
+    /* ================= IMAGES ================= */
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+
+    .image-item img {
       width: 100%;
+      display: block;
       border-radius: 10px;
       border: 1px solid var(--border);
     }
@@ -103,6 +144,25 @@
       color: var(--text-muted);
       margin-top: 5px;
     }
+
+    /* ================= SKILLS ================= */
+
+    .skill-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ================= FOOTER ================= */
 
     footer {
       text-align: center;
@@ -120,133 +180,362 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 700px) {
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        padding: 1.3rem;
+      }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
   </style>
+
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
   <h1>Ashutosh Vishwakarma</h1>
+
   <p class="degree-line-1">
     M.Tech Thermal Engineering — IIT (ISM) Dhanbad
   </p>
+
   <p class="degree-line-2">
     B.Tech Mechanical Engineering — REC, Banda
   </p>
 </header>
 
+<!-- ================= TECHNICAL SKILLS ================= -->
+
 <section>
   <h2>Technical Skills</h2>
+
   <div class="card">
-    <div class="skill-container">
-      <span class="skill-tag">ANSYS Fluent</span>
-      <span class="skill-tag">Abaqus</span>
-      <span class="skill-tag">SolidWorks</span>
-      <span class="skill-tag">CFD</span>
-      <span class="skill-tag">FEA</span>
-      <span class="skill-tag">Heat Transfer</span>
-      <span class="skill-tag">Fluid Mechanics</span>
-    </div>
+
+```
+<div class="skill-container">
+  <span class="skill-tag">ANSYS Fluent</span>
+  <span class="skill-tag">Abaqus</span>
+  <span class="skill-tag">SolidWorks</span>
+  <span class="skill-tag">CFD</span>
+  <span class="skill-tag">FEA</span>
+  <span class="skill-tag">Heat Transfer</span>
+  <span class="skill-tag">Fluid Mechanics</span>
+</div>
+```
+
   </div>
 </section>
+
+<!-- ================= PROJECTS ================= -->
 
 <section>
+
   <h2>Projects</h2>
-  
+
   <div class="card">
 
-    <h3>Savonius Wind Turbine CFD Analysis</h3>
-    <p><strong>Method:</strong> 2D transient CFD using k-ω SST model with sliding mesh in ANSYS Fluent.</p>
+```
+<!-- SAVONIUS PROJECT -->
 
-    <p><strong>Results:</strong></p>
-    <ul>
-      <li>Cp improved from 0.228 → 0.276 (+21%)</li>
-      <li>Further increased to 0.385 (+69%) using deflector</li>
-    </ul>
+<div class="project">
 
-    <p><strong>Insight:</strong> Flow redirection increases torque on advancing blade.</p>
+  <h3>Savonius Wind Turbine CFD Analysis</h3>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-      <div>
-        <img src="velocity.png">
-        <div class="img-caption">Velocity contour</div>
-      </div>
-      <div>
-        <img src="Cp_vs_TSR.png">
-        <div class="img-caption">Cp vs TSR</div>
+  <p>
+    <strong>Method:</strong>
+    2D transient CFD using k-ω SST model with sliding mesh in ANSYS Fluent.
+  </p>
+
+  <p><strong>Results:</strong></p>
+
+  <ul>
+    <li>C<sub>p</sub> improved from 0.228 → 0.276 (+21%)</li>
+    <li>Further increased to 0.385 (+69%) using deflector</li>
+  </ul>
+
+  <p>
+    <strong>Insight:</strong>
+    Flow redirection increases torque on the advancing blade.
+  </p>
+
+  <div class="image-grid">
+
+    <div class="image-item">
+      <img src="velocity.png" alt="Savonius wind turbine velocity contour">
+      <div class="img-caption">Velocity contour</div>
+    </div>
+
+    <div class="image-item">
+      <img src="Cp_vs_TSR.png" alt="Power coefficient versus tip speed ratio">
+      <div class="img-caption">C<sub>p</sub> vs TSR</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<hr class="project-divider">
+
+
+<!-- COMPOSITE PROJECT -->
+
+<div class="project">
+
+  <h3>Thermal Insulation Composite</h3>
+
+  <p>
+    <strong>Method:</strong>
+    Sandwich composite using bagasse and waste plastic.
+  </p>
+
+  <p><strong>Results:</strong></p>
+
+  <ul>
+    <li>~50% lower deformation than PVC</li>
+    <li>~23% higher thermal resistance</li>
+  </ul>
+
+  <p>
+    <strong>Insight:</strong>
+    Natural fibers improve insulation with reduced material cost.
+  </p>
+
+</div>
+
+
+<hr class="project-divider">
+
+
+<!-- BUSBAR CHT PROJECT -->
+
+<div class="project">
+
+  <h3>
+    Conjugate Heat Transfer (CHT) &amp; Natural Convection Analysis
+    of an Electrical Busbar Enclosure
+  </h3>
+
+  <p>
+    <strong>Method:</strong>
+    Steady-state Conjugate Heat Transfer (CHT) modeling in ANSYS Fluent
+    utilizing a buoyancy-driven Boussinesq model with PRESTO! pressure
+    discretization and inflation boundary layers.
+  </p>
+
+  <p><strong>Results:</strong></p>
+
+  <ul>
+    <li>
+      Volumetric source: 200,000 W/m³ per busbar
+      (150 W total heat generation across 3 copper busbars)
+    </li>
+
+    <li>
+      Predicted peak busbar temperature:
+      516.4 K (243.4°C), with natural chimney draft velocities
+      up to 0.408 m/s
+    </li>
+
+    <li>
+      Analytical validation using 1st Law energy balance and
+      Churchill-Chu natural convection correlations
+      (predicted 517 K, &lt;0.2% error)
+    </li>
+  </ul>
+
+  <p>
+    <strong>Insight:</strong>
+    Thermal stratification creates progressive vertical wake preheating.
+    The top busbar experiences the highest thermal penalty, while the
+    buoyant plume accelerates into a high-speed boundary jet along the
+    enclosure wall.
+  </p>
+
+  <div class="image-grid">
+
+    <div class="image-item">
+      <img
+        src="busbar_mesh_setup.png"
+        alt="Busbar computational domain and mesh"
+      >
+      <div class="img-caption">
+        Computational domain, boundary allocations, and near-wall inflation mesh
       </div>
     </div>
 
-    <hr style="margin:30px 0; border:none; border-top:1px solid var(--border);">
-
-    <h3>Thermal Insulation Composite</h3>
-    <p><strong>Method:</strong> Sandwich composite using bagasse and waste plastic.</p>
-
-    <p><strong>Results:</strong></p>
-    <ul>
-      <li>~50% lower deformation than PVC</li>
-      <li>~23% higher thermal resistance</li>
-    </ul>
-
-    <p><strong>Insight:</strong> Natural fibers improve insulation with reduced cost.</p>
-<hr style="margin:30px 0; border:none; border-top:1px solid var(--border);">
-
-    <h3>Conjugate Heat Transfer (CHT) &amp; Natural Convection Analysis of an Electrical Busbar Enclosure</h3>
-    <p><strong>Method:</strong> Steady-state Conjugate Heat Transfer (CHT) modeling in ANSYS Fluent utilizing a buoyancy-driven Boussinesq model with PRESTO! pressure discretization and inflation boundary layers.</p>
-
-    <p><strong>Results:</strong></p>
-    <ul>
-      <li>Volumetric source: 200,000 W/m³ per busbar (150 W total heat generation across 3 copper busbars)</li>
-      <li>Predicted peak busbar temperature: 516.4 K (243.4°C) with natural chimney draft velocities up to 0.408 m/s</li>
-      <li>Analytical validation via 1st Law energy balance and empirical Churchill-Chu natural convection correlations (predicted 517 K, &lt;0.2% error)</li>
-    </ul>
-
-    <p><strong>Insight:</strong> Thermal stratification creates progressive vertical wake preheating—the top busbar suffers the highest thermal penalty, while the buoyant plume accelerates into a high-speed boundary jet along the enclosure wall.</p>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
-      <div>
-        <img src="busbar_mesh_setup.png" alt="Domain Named Selections and Near-Wall Inflation Mesh">
-        <div class="img-caption">Computational domain, boundary allocations, and near-wall inflation mesh</div>
+    <div class="image-item">
+      <img
+        src="busbar_cfd_results.png"
+        alt="Busbar CHT temperature and velocity results"
+      >
+      <div class="img-caption">
+        Air temperature field, CHT temperature field, and velocity distribution
       </div>
-      <div>
-        <img src="busbar_cfd_results.png" alt="Air Temperature, Full CHT, and Buoyancy-Driven Velocity Field">
-        <div class="img-caption">Air temperature field (300–360 K), Full CHT temperature (300–520 K), and velocity distribution</div>
-        
-<h3>Design and CHT CFD Analysis of a Compact Pin-Fin Microchannel Cold Plate for High-Flux Electronics Cooling</h3>
-    <p><strong>Method:</strong> 3D steady-state laminar Conjugate Heat Transfer (CHT) simulation in ANSYS Fluent utilizing staggered micro-pin/rib turbulators for boundary layer disruption and thermal enhancement.</p>
+    </div>
 
-    <p><strong>Results:</strong></p>
-    <ul>
-      <li><strong>Thermal Equilibrium & Temperature Uniformity:</strong> The heat source reached steady-state thermal stabilization at <strong>T<sub>max</sub> ≈ 310.0 K</strong> (36.85°C) from an initial temperature overshoot of ~311.0 K, maintaining safe operational margins for high-heat-flux silicon dies.</li>
-      <li><strong>Coolant Caloric Temperature Rise:</strong> Bulk coolant temperature elevated smoothly from <strong>300.0 K (inlet) to 304.3 K (outlet)</strong> across the array, demonstrating efficient sensible heat extraction through the microchannel core.</li>
-      <li><strong>Hydrodynamic Stabilization & Pressure Budget:</strong> Channel pressure drop converged monotonically to a stable <strong>ΔP ≈ 3.08 kPa</strong> after an initial transient numerical peak (~10.6 kPa), proving low pumping power requirements.</li>
-      <li><strong>Local Flow Acceleration & Boundary Layer Tripping:</strong> Due to cross-sectional constriction (throat effect) around the staggered pins, local fluid velocity accelerated from the uniform inlet velocity of 0.50 m/s to peak core velocities exceeding <strong>1.25 m/s</strong>, significantly boosting the local convection coefficient (<em>h</em>).</li>
-      
-    </ul>
-
-    <p><strong>Insight:</strong> The staggered pin-fin array acts as periodic turbulators that repeatedly trip and re-initialize both hydrodynamic and thermal boundary layers. The induced wake vortex mixing and throat acceleration suppress downstream thermal resistance without imposing excessive hydraulic pumping penalties.</p>
   </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
-      <div>
-        <img src="micro_velo.png" alt="Planar Velocity Distribution Across Microchannel Array">
+
+</div>
+
+
+<hr class="project-divider">
+
+
+<!-- MICROCHANNEL PROJECT -->
+
+<div class="project">
+
+  <h3>
+    Design and CHT CFD Analysis of a Compact Pin-Fin Microchannel
+    Cold Plate for High-Flux Electronics Cooling
+  </h3>
+
+  <p>
+    <strong>Method:</strong>
+    3D steady-state laminar Conjugate Heat Transfer (CHT) simulation
+    in ANSYS Fluent utilizing staggered micro-pin/rib turbulators for
+    boundary layer disruption and thermal enhancement.
+  </p>
+
+  <p><strong>Results:</strong></p>
+
+  <ul>
+
+    <li>
+      <strong>Thermal Equilibrium &amp; Temperature Uniformity:</strong>
+      The heat source reached steady-state thermal stabilization at
+      <strong>T<sub>max</sub> ≈ 310.0 K</strong> (36.85°C) from an
+      initial temperature overshoot of ~311.0 K.
+    </li>
+
+    <li>
+      <strong>Coolant Caloric Temperature Rise:</strong>
+      Bulk coolant temperature increased from
+      <strong>300.0 K</strong> at the inlet to
+      <strong>304.3 K</strong> at the outlet.
+    </li>
+
+    <li>
+      <strong>Hydrodynamic Stabilization &amp; Pressure Budget:</strong>
+      Channel pressure drop converged to a stable
+      <strong>ΔP ≈ 3.08 kPa</strong> after an initial transient
+      numerical peak of ~10.6 kPa.
+    </li>
+
+    <li>
+      <strong>Local Flow Acceleration &amp; Boundary Layer Tripping:</strong>
+      Local fluid velocity increased from the uniform inlet velocity
+      of 0.50 m/s to peak core velocities exceeding
+      <strong>1.25 m/s</strong> around the staggered pins.
+    </li>
+
+  </ul>
+
+  <p>
+    <strong>Insight:</strong>
+    The staggered pin-fin array acts as periodic turbulators that
+    repeatedly disturb and re-initialize the hydrodynamic and thermal
+    boundary layers. Wake mixing and throat acceleration reduce
+    downstream thermal resistance without excessive hydraulic losses.
+  </p>
+
+  <div class="image-grid">
+
+    <div class="image-item">
+      <img
+        src="micro_velo.png"
+        alt="Planar velocity distribution across microchannel array"
+      >
+      <div class="img-caption">
+        Velocity distribution across the microchannel array
       </div>
-      <div>
-        <img src="micro_temp.png" alt="Planar and Streamwise Temperature Gradients">
+    </div>
+
+    <div class="image-item">
+      <img
+        src="micro_temp.png"
+        alt="Planar and streamwise temperature gradients"
+      >
+      <div class="img-caption">
+        Planar and streamwise temperature distribution
       </div>
-      <div>
-        <img src="micro_temp12.png" alt="Transverse Cross-Sectional Temperature Profile">
+    </div>
+
+    <div class="image-item">
+      <img
+        src="micro_temp12.png"
+        alt="Transverse cross-sectional temperature profile"
+      >
+      <div class="img-caption">
+        Transverse temperature profile
       </div>
-      <div>
-        <img src="micro_g1.png" 
+    </div>
+
+    <div class="image-item">
+      <img
+        src="micro_g1.png"
+        alt="Microchannel CFD result 1"
+      >
+      <div class="img-caption">
+        Microchannel CFD result
       </div>
-        <div>
-        <img src="micro_g2.png" 
+    </div>
+
+    <div class="image-item">
+      <img
+        src="micro_g2.png"
+        alt="Microchannel CFD result 2"
+      >
+      <div class="img-caption">
+        Microchannel CFD result
       </div>
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-  <p>© 2026 Ashutosh Vishwakarma |
-  <a href="https://github.com/Axhu001/Axhu001.github.io" target="_blank">GitHub Portfolio</a></p>
+
+  <p>
+    © 2026 Ashutosh Vishwakarma |
+    <a
+      href="https://github.com/Axhu001/Axhu001.github.io"
+      target="_blank"
+    >
+      GitHub Portfolio
+    </a>
+  </p>
+
 </footer>
 
 </body>
