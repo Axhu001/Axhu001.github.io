@@ -211,7 +211,34 @@
       <div>
         <img src="busbar_cfd_results.png" alt="Air Temperature, Full CHT, and Buoyancy-Driven Velocity Field">
         <div class="img-caption">Air temperature field (300–360 K), Full CHT temperature (300–520 K), and velocity distribution</div>
+        
+<h3>Design and CHT CFD Analysis of a Compact Pin-Fin Microchannel Cold Plate for High-Flux Electronics Cooling</h3>
+    <p><strong>Method:</strong> 3D steady-state laminar Conjugate Heat Transfer (CHT) simulation in ANSYS Fluent utilizing staggered micro-pin/rib turbulators for boundary layer disruption and thermal enhancement.</p>
+
+    <p><strong>Results:</strong></p>
+    <ul>
+      <li><strong>Thermal Equilibrium & Temperature Uniformity:</strong> The heat source reached steady-state thermal stabilization at <strong>T<sub>max</sub> ≈ 310.0 K</strong> (36.85°C) from an initial temperature overshoot of ~311.0 K, maintaining safe operational margins for high-heat-flux silicon dies.</li>
+      <li><strong>Coolant Caloric Temperature Rise:</strong> Bulk coolant temperature elevated smoothly from <strong>300.0 K (inlet) to 304.3 K (outlet)</strong> across the array, demonstrating efficient sensible heat extraction through the microchannel core.</li>
+      <li><strong>Hydrodynamic Stabilization & Pressure Budget:</strong> Channel pressure drop converged monotonically to a stable <strong>ΔP ≈ 3.08 kPa</strong> after an initial transient numerical peak (~10.6 kPa), proving low pumping power requirements.</li>
+      <li><strong>Local Flow Acceleration & Boundary Layer Tripping:</strong> Due to cross-sectional constriction (throat effect) around the staggered pins, local fluid velocity accelerated from the uniform inlet velocity of 0.50 m/s to peak core velocities exceeding <strong>1.25 m/s</strong>, significantly boosting the local convection coefficient (<em>h</em>).</li>
+      
+    </ul>
+
+    <p><strong>Insight:</strong> The staggered pin-fin array acts as periodic turbulators that repeatedly trip and re-initialize both hydrodynamic and thermal boundary layers. The induced wake vortex mixing and throat acceleration suppress downstream thermal resistance without imposing excessive hydraulic pumping penalties.</p>
   </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+      <div>
+        <img src="micro_velo.jpg" alt="Planar Velocity Distribution Across Microchannel Array">
+      </div>
+      <div>
+        <img src="micro_temp.jpg" alt="Planar and Streamwise Temperature Gradients">
+      </div>
+      <div>
+        <img src="micro_temp12.jpg" alt="Transverse Cross-Sectional Temperature Profile">
+      </div>
+      <div>
+        <img src="micro_g2.png" alt="Pressure Drop Convergence History">
+      </div>
 </section>
 
 <footer>
