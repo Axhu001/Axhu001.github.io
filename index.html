@@ -1,3 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Ashutosh Vishwakarma | Portfolio</title>
+
+  <style>
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    :root {
+      --primary-blue: #2563eb;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --tag-bg: #e0f2fe;
+      --tag-text: #0369a1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+
+      font-family: "Segoe UI", Arial, sans-serif;
+
+      background: var(--bg-light);
+      color: var(--text-main);
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      width: 100%;
+
+      background: #ffffff;
+
+      padding: 4rem 3rem;
+
+      text-align: center;
+
+      border-bottom: 2px solid var(--primary-blue);
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size: 3rem;
+      font-weight: 800;
+
+      color: var(--text-main);
+    }
+
+    .degree-line-1 {
+      color: var(--primary-blue);
+
+      font-weight: 600;
+
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .degree-line-2 {
+      color: var(--text-muted);
+
+      margin-top: 0;
+    }
+
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    section {
+      width: 100%;
+      max-width: none;
+
+      margin: 0;
+
+      padding: 3rem 4vw;
+    }
+
+    h2 {
+      color: var(--primary-blue);
+
+      border-bottom: 2px solid var(--border);
+
+      padding-bottom: 8px;
+
+      margin: 0 0 1.5rem 0;
+
+      font-size: 1.7rem;
+    }
+
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .card {
+      width: 100%;
+
+      background: var(--card-bg);
+
+      border-radius: 10px;
+
+      padding: 2rem;
+
+      margin-bottom: 2rem;
+
+      border: 1px solid var(--border);
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .project {
+      width: 100%;
+
+      margin-bottom: 2.5rem;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+
+      color: var(--text-main);
+
+      font-size: 1.35rem;
+
+      line-height: 1.4;
+    }
+
+    p {
+      margin-top: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+
+    /* =========================================================
+       PROJECT DIVIDER
+    ========================================================= */
+
+    .project-divider {
+      margin: 2.5rem 0;
+
+      border: none;
+
+      border-top: 1px solid var(--border);
+    }
+
+
+    /* =========================================================
+       LISTS
+    ========================================================= */
+
+    ul {
+      padding-left: 1.3rem;
+
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+
+    /* =========================================================
+       IMAGE GRID
+    ========================================================= */
+
+    .image-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+
+      width: 100%;
+
+      margin-top: 1.5rem;
+    }
+
+    .image-item {
+
+      width: 100%;
+
+      min-width: 0;
+    }
+
+
+    /*
+      Fixed visual box for every image.
+
+      "contain" keeps the complete CFD image visible
+      and preserves its original aspect ratio.
+    */
+
+    .image-item img {
+
+      display: block;
+
+      width: 100%;
+
+      height: 360px;
+
+      object-fit: contain;
+
+      object-position: center;
+
+      background: #ffffff;
+
+      border-radius: 10px;
+
+      border: 1px solid var(--border);
+    }
+
+
+    /* =========================================================
+       IMAGE CAPTIONS
+    ========================================================= */
+
+    .img-caption {
+
+      margin-top: 7px;
+
+      color: #000000;
+
+      font-size: 0.78rem;
+
+      font-style: italic;
+
+      line-height: 1.4;
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       TECHNICAL SKILLS
+    ========================================================= */
+
+    .skill-container {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .skill-tag {
+
+      background: var(--tag-bg);
+
+      color: var(--tag-text);
+
+      padding: 6px 14px;
+
+      border-radius: 20px;
+
+      font-size: 0.85rem;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+
+      width: 100%;
+
+      text-align: center;
+
+      padding: 2rem;
+
+      background: #ffffff;
+
+      color: var(--text-muted);
+
+      border-top: 1px solid var(--border);
+    }
+
+    a {
+
+      color: var(--primary-blue);
+
+      text-decoration: none;
+    }
+
+    a:hover {
+
+      text-decoration: underline;
+    }
+
+
+    /* =========================================================
+       LARGE SCREENS
+    ========================================================= */
+
+    @media (min-width: 1400px) {
+
+      section {
+
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .image-item img {
+
+        height: 420px;
+      }
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      header {
+
+        padding: 3rem 2rem;
+      }
+
+      section {
+
+        padding: 2.5rem 2rem;
+      }
+
+      .card {
+
+        padding: 1.5rem;
+      }
+
+      .image-item img {
+
+        height: 300px;
+      }
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      header {
+
+        padding: 2.5rem 1.2rem;
+      }
+
+      h1 {
+
+        font-size: 2.2rem;
+      }
+
+      section {
+
+        padding: 2rem 1rem;
+      }
+
+      .card {
+
+        padding: 1.2rem;
+      }
+
+      .image-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+      }
+
+      .image-item img {
+
+        height: 280px;
+      }
+
+      h3 {
+
+        font-size: 1.2rem;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+  <h1>Ashutosh Vishwakarma</h1>
+
+  <p class="degree-line-1">
+    M.Tech Thermal Engineering — IIT (ISM) Dhanbad
+  </p>
+
+  <p class="degree-line-2">
+    B.Tech Mechanical Engineering — REC, Banda
+  </p>
+
+</header>
+
+<!-- =========================================================
+     TECHNICAL SKILLS
+========================================================= -->
+
+<section>
+
+  <h2>Technical Skills</h2>
+
+  <div class="card">
+
+```
 <div class="skill-container">
 
   <span class="skill-tag">
@@ -29,8 +482,23 @@
   </span>
 
 </div>
+```
 
+  </div>
 
+</section>
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section>
+
+  <h2>Projects</h2>
+
+  <div class="card">
+
+```
 <!-- =====================================================
      PROJECT 1 — SAVONIUS
 ====================================================== -->
@@ -375,7 +843,7 @@
     <li>
 
       <strong>
-        Hydrodynamic Stabilization &amp;
+        Hydrodynamic Stabilization &
         Pressure Budget:
       </strong>
 
@@ -390,7 +858,7 @@
     <li>
 
       <strong>
-        Local Flow Acceleration &amp;
+        Local Flow Acceleration &
         Boundary Layer Tripping:
       </strong>
 
@@ -423,23 +891,19 @@
   <div class="image-grid">
 
 
-    <!-- 1st IMAGE: micro_temp12 -->
-
     <div class="image-item">
 
       <img
-        src="micro_temp12.png"
-        alt="Transverse cross-sectional temperature profile"
+        src="micro_velo.png"
+        alt="Planar velocity distribution across microchannel array"
       >
 
       <div class="img-caption">
-        Transverse temperature profile
+        Velocity distribution across the microchannel array
       </div>
 
     </div>
 
-
-    <!-- 2nd IMAGE: micro_temp -->
 
     <div class="image-item">
 
@@ -455,23 +919,33 @@
     </div>
 
 
-    <!-- 3rd IMAGE: micro_velo -->
-
     <div class="image-item">
 
       <img
-        src="micro_velo.png"
-        alt="Planar velocity distribution across microchannel array"
+        src="micro_temp12.png"
+        alt="Transverse cross-sectional temperature profile"
       >
 
       <div class="img-caption">
-        Velocity distribution across the microchannel array
+        Transverse temperature profile
       </div>
 
     </div>
 
 
-    <!-- 4th IMAGE: micro_g2 -->
+    <div class="image-item">
+
+      <img
+        src="micro_g1.png"
+        alt="Microchannel CFD result 1"
+      >
+
+      <div class="img-caption">
+        Microchannel CFD result
+      </div>
+
+    </div>
+
 
     <div class="image-item">
 
@@ -487,32 +961,24 @@
     </div>
 
 
-    <!-- 5th IMAGE: micro_g -->
-
-    <div class="image-item">
-
-      <img
-        src="micro_g.png"
-        alt="Microchannel CFD result"
-      >
-
-      <div class="img-caption">
-        Microchannel CFD result
-      </div>
-
-    </div>
-
-
   </div>
 
 </div>
+```
 
+  </div>
 
+</section>
 
-<hr class="project-divider">
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
+<footer>
 
+  <p>
 
+```
 © 2026 Ashutosh Vishwakarma |
 
 <a
@@ -522,3 +988,11 @@
 >
   GitHub Portfolio
 </a>
+```
+
+  </p>
+
+</footer>
+
+</body>
+</html>
