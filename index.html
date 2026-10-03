@@ -1,1188 +1,374 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Ashutosh Vishwakarma | Portfolio</title>
-
-  <style>
-
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
-
-    :root {
-      --primary-blue: #2563eb;
-      --bg-light: #f8fafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --tag-bg: #e0f2fe;
-      --tag-text: #0369a1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      width: 100%;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
-
-      font-family: "Segoe UI", Arial, sans-serif;
-
-      background: var(--bg-light);
-      color: var(--text-main);
-
-      line-height: 1.6;
-    }
-
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
-    header {
-      width: 100%;
-
-      background: #ffffff;
-
-      padding: 4rem 3rem;
-
-      text-align: center;
-
-      border-bottom: 2px solid var(--primary-blue);
-    }
-
-    h1 {
-      margin: 0;
-
-      font-size: 3rem;
-      font-weight: 800;
-
-      color: var(--text-main);
-    }
-
-    .degree-line-1 {
-      color: var(--primary-blue);
-
-      font-weight: 600;
-
-      margin-top: 15px;
-      margin-bottom: 5px;
-    }
-
-    .degree-line-2 {
-      color: var(--text-muted);
-
-      margin-top: 0;
-    }
-
-
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
-
-    section {
-      width: 100%;
-      max-width: none;
-
-      margin: 0;
-
-      padding: 3rem 4vw;
-    }
-
-    h2 {
-      color: var(--primary-blue);
-
-      border-bottom: 2px solid var(--border);
-
-      padding-bottom: 8px;
-
-      margin: 0 0 1.5rem 0;
-
-      font-size: 1.7rem;
-    }
-
-
-    /* =========================================================
-       CARDS
-    ========================================================= */
-
-    .card {
-      width: 100%;
-
-      background: var(--card-bg);
-
-      border-radius: 10px;
-
-      padding: 2rem;
-
-      margin-bottom: 2rem;
-
-      border: 1px solid var(--border);
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .project {
-      width: 100%;
-
-      margin-bottom: 2.5rem;
-    }
-
-    .project:last-child {
-      margin-bottom: 0;
-    }
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-
-      color: var(--text-main);
-
-      font-size: 1.35rem;
-
-      line-height: 1.4;
-    }
-
-    p {
-      margin-top: 0.6rem;
-      margin-bottom: 0.9rem;
-    }
-
-
-    /* =========================================================
-       PROJECT DIVIDER
-    ========================================================= */
-
-    .project-divider {
-      margin: 2.5rem 0;
-
-      border: none;
-
-      border-top: 1px solid var(--border);
-    }
-
-
-    /* =========================================================
-       LISTS
-    ========================================================= */
-
-    ul {
-      padding-left: 1.3rem;
-
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-
-    /* =========================================================
-       IMAGE GRID
-    ========================================================= */
-
-    .image-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-      gap: 18px;
-
-      width: 100%;
-
-      margin-top: 1.5rem;
-    }
-
-    .image-item {
-
-      width: 100%;
-
-      min-width: 0;
-    }
-
-
-    /*
-      Fixed visual box for every image.
-
-      "contain" keeps the complete CFD image visible
-      and preserves its original aspect ratio.
-    */
-
-    .image-item img {
-
-      display: block;
-
-      width: 100%;
-
-      height: 360px;
-
-      object-fit: contain;
-
-      object-position: center;
-
-      background: #ffffff;
-
-      border-radius: 10px;
-
-      border: 1px solid var(--border);
-    }
-
-
-    /* =========================================================
-       IMAGE CAPTIONS
-    ========================================================= */
-
-    .img-caption {
-
-      margin-top: 7px;
-
-      color: #000000;
-
-      font-size: 0.78rem;
-
-      font-style: italic;
-
-      line-height: 1.4;
-
-      text-align: center;
-    }
-
-
-    /* =========================================================
-       TECHNICAL SKILLS
-    ========================================================= */
-
-    .skill-container {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-    }
-
-    .skill-tag {
-
-      background: var(--tag-bg);
-
-      color: var(--tag-text);
-
-      padding: 6px 14px;
-
-      border-radius: 20px;
-
-      font-size: 0.85rem;
-
-      font-weight: 600;
-    }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
-    footer {
-
-      width: 100%;
-
-      text-align: center;
-
-      padding: 2rem;
-
-      background: #ffffff;
-
-      color: var(--text-muted);
-
-      border-top: 1px solid var(--border);
-    }
-
-    a {
-
-      color: var(--primary-blue);
-
-      text-decoration: none;
-    }
-
-    a:hover {
-
-      text-decoration: underline;
-    }
-
-
-    /* =========================================================
-       LARGE SCREENS
-    ========================================================= */
-
-    @media (min-width: 1400px) {
-
-      section {
-
-        padding-left: 5vw;
-        padding-right: 5vw;
-      }
-
-      .image-item img {
-
-        height: 420px;
-      }
-    }
-
-
-    /* =========================================================
-       TABLET
-    ========================================================= */
-
-    @media (max-width: 900px) {
-
-      header {
-
-        padding: 3rem 2rem;
-      }
-
-      section {
-
-        padding: 2.5rem 2rem;
-      }
-
-      .card {
-
-        padding: 1.5rem;
-      }
-
-      .image-item img {
-
-        height: 300px;
-      }
-    }
-
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
-
-    @media (max-width: 700px) {
-
-      header {
-
-        padding: 2.5rem 1.2rem;
-      }
-
-      h1 {
-
-        font-size: 2.2rem;
-      }
-
-      section {
-
-        padding: 2rem 1rem;
-      }
-
-      .card {
-
-        padding: 1.2rem;
-      }
-
-      .image-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-      }
-
-      .image-item img {
-
-        height: 280px;
-      }
-
-      h3 {
-
-        font-size: 1.2rem;
-      }
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashutosh Vishwakarma | Portfolio</title>
+<meta name="description" content="Ashutosh Vishwakarma — M.Tech Thermal Engineering, IIT (ISM) Dhanbad. CFD, conjugate heat transfer and thermal design projects.">
+<style>
+/* ==========================================================
+   DESIGN TOKENS
+   Palette is taken from thermal CFD contours: cool teal to heat orange,
+   on deep navy "ink" and a cool paper background.
+========================================================== */
+:root{
+  --ink:#0d1a2b;          /* hero / dark surfaces */
+  --ink-2:#16283f;
+  --paper:#f4f6f8;        /* page background */
+  --white:#fff;
+  --text:#1b2735;
+  --muted:#5b6b7d;
+  --line:#d9e0e7;
+  --cool:#0f7c8f;         /* primary accent */
+  --cool-soft:#e2f2f4;
+  --heat:#d9480f;         /* result highlight accent */
+  --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;
+  --wrap:1320px;
+  --nav-h:60px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--paper);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--cool)}
+:focus-visible{outline:3px solid var(--heat);outline-offset:3px;border-radius:2px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--white);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:0}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+.nav{position:sticky;top:0;z-index:50;height:var(--nav-h);background:rgba(13,26,43,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{height:100%;display:flex;align-items:center;justify-content:flex-start}
+.menu{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:.45rem .9rem;color:#b9c6d4;text-decoration:none;font-size:.92rem;border-radius:4px;transition:color .2s,background .2s}
+.menu a:hover,.menu a.active{color:#fff;background:rgba(255,255,255,.08)}
+.burger{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:4px;padding:.4rem .7rem;font:inherit;font-size:.9rem;cursor:pointer}
+
+/* ==========================================================
+   HERO
+========================================================== */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding:clamp(4rem,11vw,8rem) 0 clamp(3.5rem,8vw,6rem)}
+/* engineering grid */
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,transparent 0,#000 40%,#000 100%)}
+/* CFD streamlines */
+.flow{position:absolute;right:0;top:0;width:min(78%,900px);height:100%;pointer-events:none}
+.flow path{fill:none;stroke-linecap:round;stroke-dasharray:10 16;animation:stream 14s linear infinite}
+.flow .p1{stroke:#2cb1c6;stroke-width:1.6;opacity:.7}
+.flow .p2{stroke:#2cb1c6;stroke-width:1.2;opacity:.45;animation-duration:19s}
+.flow .p3{stroke:#f08a5d;stroke-width:1.6;opacity:.7;animation-duration:16s}
+.flow .p4{stroke:#f08a5d;stroke-width:1.2;opacity:.4;animation-duration:22s}
+.flow circle{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1.2}
+@keyframes stream{to{stroke-dashoffset:-260}}
+.hero .wrap{position:relative}
+.hero h1{margin:0;font-size:clamp(2.6rem,7vw,5rem);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+.roles{margin:2rem 0 0;padding:0;list-style:none;display:grid;gap:.7rem;max-width:34rem}
+.roles li{padding-left:1rem;border-left:3px solid var(--cool);font-size:1.05rem;color:#d3dde7}
+.roles li:first-child{border-color:var(--heat);color:#fff;font-weight:600;font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.4rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:4px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--heat);color:#fff}
+.btn-primary:hover{background:#bf3f0b}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ==========================================================
+   SECTION BASICS
+========================================================== */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{margin-bottom:2.5rem;max-width:40rem}
+h2{margin:0;font-size:clamp(1.7rem,3.5vw,2.3rem);letter-spacing:-.02em;line-height:1.2}
+h2::after{content:"";display:block;width:56px;height:4px;margin-top:.8rem;background:linear-gradient(90deg,var(--cool),var(--heat))}
+
+/* ==========================================================
+   SKILLS
+========================================================== */
+.skills{background:var(--white);border-block:1px solid var(--line)}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.skill-grid h3{margin:0 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--ink);font-size:1.05rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}
+.tags li{background:var(--cool-soft);color:#0a5663;font-weight:600;font-size:.9rem;padding:.35rem .8rem;border-radius:3px;transition:background .2s,color .2s}
+.tags li:hover{background:var(--cool);color:#fff}
+
+/* ==========================================================
+   PROJECTS — case studies
+========================================================== */
+.case{padding:clamp(2rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case h3{margin:0;font-size:clamp(1.35rem,2.8vw,1.85rem);line-height:1.25;letter-spacing:-.015em}
+.method{margin:1.1rem 0 0;padding:.9rem 1.1rem;background:var(--white);border-left:4px solid var(--cool);font-size:.98rem}
+.method strong,.insight strong.lbl{display:block;font-size:.85rem;color:var(--cool);margin-bottom:.15rem}
+.detail{margin-top:1.8rem;display:grid;grid-template-columns:1fr;gap:1.8rem}
+.detail h4{margin:0 0 .7rem;font-size:1.05rem}
+.detail ul{margin:0;padding-left:1.2rem}
+.detail li{margin-bottom:.6rem}
+.insight{margin:0;padding:1.2rem 1.4rem;background:var(--cool-soft);border-radius:4px;color:#10363d}
+.insight p{margin:0}
+.insight strong.lbl{font-size:1.05rem;color:#0a5663;margin-bottom:.5rem}
+
+/* Gallery — consistent frames, images never distorted */
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:2.2rem}
+.gallery figure{margin:0;min-width:0}
+.shot{display:block;width:100%;padding:0;border:1px solid var(--line);background:var(--white);border-radius:4px;cursor:zoom-in;overflow:hidden;position:relative;transition:box-shadow .25s,border-color .25s}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:contain;transition:transform .35s}
+.shot:hover{border-color:var(--cool);box-shadow:0 10px 28px rgba(13,26,43,.12)}
+.shot:hover img{transform:scale(1.03)}
+.shot::after{content:"Enlarge";position:absolute;right:.6rem;bottom:.6rem;background:var(--ink);color:#fff;font-size:.75rem;padding:.2rem .55rem;border-radius:3px;opacity:0;transition:opacity .2s}
+.shot:hover::after,.shot:focus-visible::after{opacity:1}
+figcaption{margin-top:.55rem;font-size:.86rem;color:var(--muted);line-height:1.45}
+
+/* ==========================================================
+   CONTACT / FOOTER
+========================================================== */
+footer{background:#08111d;color:#8798aa;font-size:.88rem;padding:1.3rem 0}
+
+/* Lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1200px);width:100%;color:#fff}
+dialog::backdrop{background:rgba(5,10,18,.88)}
+dialog img{margin:0 auto;max-height:80vh;background:#fff;border-radius:4px;object-fit:contain}
+dialog p{text-align:center;margin:.8rem 3rem 0;font-size:.95rem}
+.close{position:absolute;top:-.2rem;right:.2rem;background:var(--white);border:0;border-radius:4px;font:inherit;font-weight:600;padding:.35rem .8rem;cursor:pointer}
+
+/* Scroll reveal (disabled when motion is reduced) */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .flow path{animation:none}
+  *{transition-duration:.01ms!important}
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width:900px){
+}
+@media (max-width:760px){
+  .burger{display:block}
+  .menu{position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;background:var(--ink);padding:.5rem 1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);display:none}
+  .menu.open{display:flex}
+  .menu a{padding:.8rem .4rem}
+  .flow{opacity:.5;width:100%}
+}
+@media (max-width:620px){
+  .wrap{width:min(var(--wrap),100% - 2rem)}
+  .skill-grid,.gallery{grid-template-columns:1fr}
+  .btn{flex:1 1 100%;text-align:center}
+}
+</style>
 </head>
-
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#skills">Technical Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+</nav>
 
-<header>
-
-  <h1>Ashutosh Vishwakarma</h1>
-
-  <p class="degree-line-1">
-    M.Tech Thermal Engineering — IIT (ISM) Dhanbad
-  </p>
-
-  <p class="degree-line-2">
-    B.Tech Mechanical Engineering — REC, Banda
-  </p>
-
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <svg class="flow" viewBox="0 0 900 600" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <path class="p1" d="M0 140 C220 140 300 90 450 150 S700 230 900 170"/>
+    <path class="p2" d="M0 200 C220 200 310 160 450 215 S700 290 900 235"/>
+    <path class="p3" d="M0 330 C230 330 320 400 450 345 S700 280 900 340"/>
+    <path class="p4" d="M0 390 C230 390 320 455 450 405 S700 345 900 400"/>
+    <path class="p1" d="M0 470 C250 470 330 500 470 470 S720 430 900 480"/>
+    <circle cx="450" cy="275" r="44"/>
+    <circle cx="450" cy="275" r="62" stroke-dasharray="3 7"/>
+  </svg>
+  <div class="wrap">
+    <h1>Ashutosh Vishwakarma</h1>
+    <ul class="roles">
+      <li>M.Tech Thermal Engineering — IIT (ISM) Dhanbad</li>
+      <li>B.Tech Mechanical Engineering — REC, Banda</li>
+    </ul>
+    <div class="cta">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+    </div>
+  </div>
 </header>
 
-<!-- =========================================================
-     TECHNICAL SKILLS
-========================================================= -->
+<main id="main">
 
-<section>
-
-  <h2>Technical Skills</h2>
-
-  <div class="card">
-
-<div class="skill-container">
-
-  <span class="skill-tag">
-    ANSYS Fluent
-  </span>
-
-  <span class="skill-tag">
-    Abaqus
-  </span>
-
-  <span class="skill-tag">
-    SolidWorks
-  </span>
-
-  <span class="skill-tag">
-    CFD
-  </span>
-
-  <span class="skill-tag">
-    FEA
-  </span>
-
-  <span class="skill-tag">
-    Heat Transfer
-  </span>
-
-  <span class="skill-tag">
-    Fluid Mechanics
-  </span>
-
-</div>
-
+<!-- ============ TECHNICAL SKILLS ============ -->
+<section class="skills" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 id="skills-h">Technical Skills</h2></div>
+    <div class="skill-grid reveal">
+      <div>
+        <h3>Core Subjects</h3>
+        <ul class="tags"><li>Heat Transfer</li><li>Computational Fluid Dynamics</li><li>Thermodynamics</li><li>Renewable Energy</li></ul>
+      </div>
+      <div>
+        <h3>Software &amp; Tools</h3>
+        <ul class="tags"><li>Ansys</li><li>SolidWorks</li><li>Ansys Fluent</li><li>Ansys Icepak</li><li>MATLAB</li><li>OriginPro</li><li>Microsoft Office</li></ul>
+      </div>
+    </div>
   </div>
-
 </section>
 
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
+<!-- ============ PROJECTS ============ -->
+<section id="projects" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2 id="proj-h">Projects</h2></div>
 
-<section>
-
-  <h2>Projects</h2>
-
-  <div class="card">
-
-<!-- =====================================================
-     PROJECT 1 — SAVONIUS
-====================================================== -->
-
-<div class="project">
-
-  <h3>
-    Savonius Wind Turbine CFD Analysis
-  </h3>
-
-  <p>
-
-    <strong>Method:</strong>
-
-    2D transient CFD using k-ω SST model
-    with sliding mesh in ANSYS Fluent.
-
-  </p>
-
-
-  <p>
-    <strong>Results:</strong>
-  </p>
-
-  <ul>
-
-    <li>
-      C<sub>p</sub> improved from
-      0.228 → 0.276 (+21%)
-    </li>
-
-    <li>
-      Further increased to
-      0.385 (+69%) using deflector
-    </li>
-
-  </ul>
-
-
-  <p>
-
-    <strong>Insight:</strong>
-
-    Flow redirection increases torque on
-    the advancing blade.
-
-  </p>
-
-
-  <div class="image-grid">
-
-
-    <div class="image-item">
-
-      <img
-        src="velocity.png"
-        alt="Savonius wind turbine velocity contour"
-      >
-
-      <div class="img-caption">
-        Velocity contour
+    <!-- PROJECT 1 — SAVONIUS -->
+    <article class="case reveal">
+      <h3>Savonius Wind Turbine CFD Analysis</h3>
+      <p class="method"><strong>Method</strong>2D transient CFD using k-ω SST model with sliding mesh in ANSYS Fluent.</p>
+      <div class="detail">
+        <div>
+          <h4>Results</h4>
+          <ul>
+            <li>C<sub>p</sub> improved from 0.228 → 0.276 (+21%)</li>
+            <li>Further increased to 0.385 (+69%) using deflector</li>
+          </ul>
+        </div>
+        <aside class="insight"><strong class="lbl">Insight</strong><p>Flow redirection increases torque on the advancing blade.</p></aside>
       </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="Cp_vs_TSR.png"
-        alt="Power coefficient versus tip speed ratio"
-      >
-
-      <div class="img-caption">
-        C<sub>p</sub> vs TSR
+      <div class="gallery">
+        <figure><button class="shot" type="button"><img src="velocity.png" alt="Savonius wind turbine velocity contour" loading="lazy"></button><figcaption>Velocity contour</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="Cp_vs_TSR.png" alt="Power coefficient versus tip speed ratio" loading="lazy"></button><figcaption>C<sub>p</sub> vs TSR</figcaption></figure>
       </div>
+    </article>
 
-    </div>
+    <!-- PROJECT 2 — COMPOSITE -->
+    <article class="case reveal">
+      <h3>Thermal Insulation Composite</h3>
+      <p class="method"><strong>Method</strong>Sandwich composite using bagasse and waste plastic.</p>
+      <div class="detail">
+        <div>
+          <h4>Results</h4>
+          <ul>
+            <li>~50% lower deformation than PVC</li>
+            <li>~23% higher thermal resistance</li>
+          </ul>
+        </div>
+        <aside class="insight"><strong class="lbl">Insight</strong><p>Natural fibers improve insulation with reduced material cost.</p></aside>
+      </div>
+    </article>
 
+    <!-- PROJECT 3 — BUSBAR CHT -->
+    <article class="case reveal">
+      <h3>Conjugate Heat Transfer (CHT) &amp; Natural Convection Analysis of an Electrical Busbar Enclosure</h3>
+      <p class="method"><strong>Method</strong>Steady-state Conjugate Heat Transfer (CHT) modeling in ANSYS Fluent utilizing a buoyancy-driven Boussinesq model with PRESTO! pressure discretization and inflation boundary layers.</p>
+      <div class="detail">
+        <div>
+          <h4>Results</h4>
+          <ul>
+            <li>Volumetric source: 200,000 W/m³ per busbar (150 W total heat generation across 3 copper busbars)</li>
+            <li>Predicted peak busbar temperature: 516.4 K (243.4°C), with natural chimney draft velocities up to 0.408 m/s</li>
+            <li>Analytical validation using 1st Law energy balance and Churchill-Chu natural convection correlations (predicted 517 K, &lt;0.2% error)</li>
+          </ul>
+        </div>
+        <aside class="insight"><strong class="lbl">Insight</strong><p>Thermal stratification creates progressive vertical wake preheating. The top busbar experiences the highest thermal penalty, while the buoyant plume accelerates into a high-speed boundary jet along the enclosure wall.</p></aside>
+      </div>
+      <div class="gallery">
+        <figure><button class="shot" type="button"><img src="busbar_mesh_setup.png" alt="Busbar computational domain and mesh" loading="lazy"></button><figcaption>Computational domain, boundary allocations, and near-wall inflation mesh</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="busbar_cfd_results.png" alt="Busbar CHT temperature and velocity results" loading="lazy"></button><figcaption>Air temperature field, CHT temperature field, and velocity distribution</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- PROJECT 4 — MICROCHANNEL -->
+    <article class="case reveal">
+      <h3>Design and CHT CFD Analysis of a Compact Pin-Fin Microchannel Cold Plate for High-Flux Electronics Cooling</h3>
+      <p class="method"><strong>Method</strong>3D steady-state laminar Conjugate Heat Transfer (CHT) simulation in ANSYS Fluent utilizing staggered micro-pin/rib turbulators for boundary layer disruption and thermal enhancement.</p>
+      <div class="detail">
+        <div>
+          <h4>Results</h4>
+          <ul>
+            <li><strong>Thermal Equilibrium &amp; Temperature Uniformity:</strong> The heat source reached steady-state thermal stabilization at <strong>T<sub>max</sub> ≈ 310.0 K</strong> (36.85°C) from an initial temperature overshoot of ~311.0 K.</li>
+            <li><strong>Coolant Caloric Temperature Rise:</strong> Bulk coolant temperature increased from <strong>300.0 K</strong> at the inlet to <strong>304.3 K</strong> at the outlet.</li>
+            <li><strong>Hydrodynamic Stabilization &amp; Pressure Budget:</strong> Channel pressure drop converged to a stable <strong>ΔP ≈ 3.08 kPa</strong> after an initial transient numerical peak of ~10.6 kPa.</li>
+            <li><strong>Local Flow Acceleration &amp; Boundary Layer Tripping:</strong> Local fluid velocity increased from the uniform inlet velocity of 0.50 m/s to peak core velocities exceeding <strong>1.25 m/s</strong> around the staggered pins.</li>
+          </ul>
+        </div>
+        <aside class="insight"><strong class="lbl">Insight</strong><p>The staggered pin-fin array acts as periodic turbulators that repeatedly disturb and re-initialize the hydrodynamic and thermal boundary layers. Wake mixing and throat acceleration reduce downstream thermal resistance without excessive hydraulic losses.</p></aside>
+      </div>
+      <div class="gallery">
+        <figure><button class="shot" type="button"><img src="micro_temp12.png" alt="Transverse cross-sectional temperature profile" loading="lazy"></button><figcaption>Transverse temperature profile</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="micro_temp.png" alt="Planar and streamwise temperature gradients" loading="lazy"></button><figcaption>Planar and streamwise temperature distribution</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="micro_velo.png" alt="Planar velocity distribution across microchannel array" loading="lazy"></button><figcaption>Velocity distribution across the microchannel array</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="micro_g2.png" alt="Microchannel CFD result 1" loading="lazy"></button><figcaption>Microchannel CFD result</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="micro_g1.png" alt="Microchannel CFD result 2" loading="lazy"></button><figcaption>Microchannel CFD result</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="micro_g31.png" alt="Microchannel CFD result 3" loading="lazy"></button><figcaption>Microchannel CFD result</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- PROJECT 5 — IGBT -->
+    <article class="case reveal">
+      <h3>Thermal Optimization of Enclosed Forced-Convection Heat Sink for 300 W IGBT Module</h3>
+      <p class="method"><strong>Method</strong>3D conjugate heat-transfer simulation in <strong>ANSYS Icepak</strong> for a 300 W IGBT module with six IGBTs dissipating <strong>50 W each</strong>, with three IGBTs mounted on each heat-sink side. An enclosed forced-convection cooling system was modelled with finned heat sinks, inlet fans, and exhaust fans.</p>
+      <div class="detail">
+        <div>
+          <h4>Results</h4>
+          <ul>
+            <li>Performed a parametric study by varying <strong>fin number (N)</strong> and <strong>fin height (H)</strong> over N = 24–40 and H = 22–34 mm.</li>
+            <li>The optimized configuration was identified as <strong>N = 36 fins with H = 34 mm</strong>, achieving a maximum temperature of <strong>54.91°C</strong>.</li>
+            <li>Maximum temperature was reduced from <strong>66.01°C</strong> for N = 28, H = 26 mm to <strong>54.91°C</strong>, corresponding to an <strong>11.10°C (~16.8%) reduction</strong>.</li>
+            <li>The optimized configuration produced an average airflow velocity of <strong>1.44 m/s</strong>, compared with 1.18 m/s for the N = 28, H = 26 mm case.</li>
+            <li>The average temperature decreased from <strong>48.09°C</strong> for N = 28, H = 26 mm to approximately <strong>43.18°C</strong> for N = 36, H = 34 mm.</li>
+          </ul>
+        </div>
+        <aside class="insight"><strong class="lbl">Insight</strong><p>Increasing fin number and height initially improves heat dissipation by increasing the available heat-transfer area. However, beyond the optimum fin density, increased flow resistance and reduced effective airflow between closely spaced fins limit the cooling improvement. The <strong>N = 36, H = 34 mm</strong> configuration provides a balance between heat-transfer area and airflow distribution within the enclosed heat sink.</p></aside>
+      </div>
+      <div class="gallery">
+        <figure><button class="shot" type="button"><img src="IGBT_T3.png" alt="Cross-sectional temperature distribution of IGBT heat sink" loading="lazy"></button><figcaption>Cross-sectional temperature distribution showing cooling of the IGBT heat sinks</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="IGBT_T1.png" alt="Top view temperature distribution of IGBT heat sink" loading="lazy"></button><figcaption>Top-view temperature distribution through the fin channels</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="IGBT_V.png" alt="Velocity distribution through IGBT heat sink fin channels" loading="lazy"></button><figcaption>Velocity distribution showing forced airflow through the top and bottom fin channels</figcaption></figure>
+        <figure><button class="shot" type="button"><img src="IGBT_D.png" alt="Thermal optimization of IGBT heat sink fin number and height" loading="lazy"></button><figcaption>Thermal optimization of fin number and fin height</figcaption></figure>
+      </div>
+    </article>
 
   </div>
-
-</div>
-
-
-
-<hr class="project-divider">
-
-
-
-<!-- =====================================================
-     PROJECT 2 — COMPOSITE
-====================================================== -->
-
-<div class="project">
-
-  <h3>
-    Thermal Insulation Composite
-  </h3>
-
-
-  <p>
-
-    <strong>Method:</strong>
-
-    Sandwich composite using bagasse
-    and waste plastic.
-
-  </p>
-
-
-  <p>
-    <strong>Results:</strong>
-  </p>
-
-
-  <ul>
-
-    <li>
-      ~50% lower deformation than PVC
-    </li>
-
-    <li>
-      ~23% higher thermal resistance
-    </li>
-
-  </ul>
-
-
-  <p>
-
-    <strong>Insight:</strong>
-
-    Natural fibers improve insulation
-    with reduced material cost.
-
-  </p>
-
-</div>
-
-
-
-<hr class="project-divider">
-
-
-
-<!-- =====================================================
-     PROJECT 3 — BUSBAR CHT
-====================================================== -->
-
-<div class="project">
-
-  <h3>
-
-    Conjugate Heat Transfer (CHT) &
-    Natural Convection Analysis of an
-    Electrical Busbar Enclosure
-
-  </h3>
-
-
-  <p>
-
-    <strong>Method:</strong>
-
-    Steady-state Conjugate Heat Transfer
-    (CHT) modeling in ANSYS Fluent utilizing
-    a buoyancy-driven Boussinesq model with
-    PRESTO! pressure discretization and
-    inflation boundary layers.
-
-  </p>
-
-
-  <p>
-    <strong>Results:</strong>
-  </p>
-
-
-  <ul>
-
-    <li>
-
-      Volumetric source:
-      200,000 W/m³ per busbar
-      (150 W total heat generation across
-      3 copper busbars)
-
-    </li>
-
-
-    <li>
-
-      Predicted peak busbar temperature:
-      516.4 K (243.4°C), with natural
-      chimney draft velocities up to
-      0.408 m/s
-
-    </li>
-
-
-    <li>
-
-      Analytical validation using 1st Law
-      energy balance and Churchill-Chu
-      natural convection correlations
-      (predicted 517 K, &lt;0.2% error)
-
-    </li>
-
-  </ul>
-
-
-  <p>
-
-    <strong>Insight:</strong>
-
-    Thermal stratification creates progressive
-    vertical wake preheating. The top busbar
-    experiences the highest thermal penalty,
-    while the buoyant plume accelerates into
-    a high-speed boundary jet along the
-    enclosure wall.
-
-  </p>
-
-
-  <div class="image-grid">
-
-
-    <div class="image-item">
-
-      <img
-        src="busbar_mesh_setup.png"
-        alt="Busbar computational domain and mesh"
-      >
-
-      <div class="img-caption">
-
-        Computational domain, boundary allocations,
-        and near-wall inflation mesh
-
-      </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="busbar_cfd_results.png"
-        alt="Busbar CHT temperature and velocity results"
-      >
-
-      <div class="img-caption">
-
-        Air temperature field, CHT temperature field,
-        and velocity distribution
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-
-
-<hr class="project-divider">
-
-
-
-<!-- =====================================================
-     PROJECT 4 — MICROCHANNEL
-====================================================== -->
-
-<div class="project">
-
-  <h3>
-
-    Design and CHT CFD Analysis of a
-    Compact Pin-Fin Microchannel Cold Plate
-    for High-Flux Electronics Cooling
-
-  </h3>
-
-
-  <p>
-
-    <strong>Method:</strong>
-
-    3D steady-state laminar Conjugate Heat
-    Transfer (CHT) simulation in ANSYS Fluent
-    utilizing staggered micro-pin/rib turbulators
-    for boundary layer disruption and thermal
-    enhancement.
-
-  </p>
-
-
-  <p>
-    <strong>Results:</strong>
-  </p>
-
-
-  <ul>
-
-
-    <li>
-
-      <strong>
-        Thermal Equilibrium &amp;
-        Temperature Uniformity:
-      </strong>
-
-      The heat source reached steady-state
-      thermal stabilization at
-      <strong>
-        T<sub>max</sub> ≈ 310.0 K
-      </strong>
-      (36.85°C) from an initial temperature
-      overshoot of ~311.0 K.
-
-    </li>
-
-
-    <li>
-
-      <strong>
-        Coolant Caloric Temperature Rise:
-      </strong>
-
-      Bulk coolant temperature increased from
-      <strong>300.0 K</strong> at the inlet to
-      <strong>304.3 K</strong> at the outlet.
-
-    </li>
-
-
-    <li>
-
-      <strong>
-        Hydrodynamic Stabilization &
-        Pressure Budget:
-      </strong>
-
-      Channel pressure drop converged to a stable
-      <strong>ΔP ≈ 3.08 kPa</strong>
-      after an initial transient numerical peak
-      of ~10.6 kPa.
-
-    </li>
-
-
-    <li>
-
-      <strong>
-        Local Flow Acceleration &
-        Boundary Layer Tripping:
-      </strong>
-
-      Local fluid velocity increased from the
-      uniform inlet velocity of 0.50 m/s to peak
-      core velocities exceeding
-      <strong>1.25 m/s</strong>
-      around the staggered pins.
-
-    </li>
-
-
-  </ul>
-
-
-  <p>
-
-    <strong>Insight:</strong>
-
-    The staggered pin-fin array acts as periodic
-    turbulators that repeatedly disturb and
-    re-initialize the hydrodynamic and thermal
-    boundary layers. Wake mixing and throat
-    acceleration reduce downstream thermal
-    resistance without excessive hydraulic losses.
-
-  </p>
-
-
-  <div class="image-grid">
-
-
-    
- <div class="image-item">
-
-      <img
-        src="micro_temp12.png"
-        alt="Transverse cross-sectional temperature profile"
-      >
-
-      <div class="img-caption">
-        Transverse temperature profile
-      </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="micro_temp.png"
-        alt="Planar and streamwise temperature gradients"
-      >
-
-      <div class="img-caption">
-        Planar and streamwise temperature distribution
-      </div>
-
-    </div>
-
-    <div class="image-item">
-
-      <img
-        src="micro_velo.png"
-        alt="Planar velocity distribution across microchannel array"
-      >
-
-      <div class="img-caption">
-        Velocity distribution across the microchannel array
-      </div>
-
-    </div>
-
-    <div class="image-item">
-
-      <img
-        src="micro_g2.png"
-        alt="Microchannel CFD result 1"
-      >
-
-      <div class="img-caption">
-        Microchannel CFD result
-      </div>
-
-    </div>
-
-    <div class="image-item">
-
-      <img
-        src="micro_g1.png"
-        alt="Microchannel CFD result 1"
-      >
-
-      <div class="img-caption">
-        Microchannel CFD result
-      </div>
-
-    </div>
-
-    <div class="image-item">
-
-      <img
-        src="micro_g31.png"
-        alt="Microchannel CFD result 1"
-      >
-
-      <div class="img-caption">
-        Microchannel CFD result
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-
-<hr class="project-divider">
-
-
-
-<!-- =====================================================
-     PROJECT 5 — IGBT COOLING
-====================================================== -->
-
-<div class="project">
-
-  <h3>
-
-    Thermal Optimization of Enclosed Forced-Convection
-    Heat Sink for 300 W IGBT Module
-
-  </h3>
-
-
-  <p>
-
-    <strong>Method:</strong>
-
-    3D conjugate heat-transfer simulation in
-    <strong>ANSYS Icepak</strong> for a 300 W IGBT
-    module with six IGBTs dissipating
-    <strong>50 W each</strong>, with three IGBTs
-    mounted on each heat-sink side.
-
-    An enclosed forced-convection cooling system
-    was modelled with finned heat sinks,
-    inlet fans, and exhaust fans.
-
-  </p>
-
-
-  <p>
-
-    <strong>Results:</strong>
-
-  </p>
-
-
-  <ul>
-
-    <li>
-
-      Performed a parametric study by varying
-      <strong>fin number (N)</strong> and
-      <strong>fin height (H)</strong> over
-      N = 24–40 and H = 22–34 mm.
-
-    </li>
-
-
-    <li>
-
-      The optimized configuration was identified as
-      <strong>N = 36 fins with H = 34 mm</strong>,
-      achieving a maximum temperature of
-      <strong>54.91°C</strong>.
-
-    </li>
-
-
-    <li>
-
-      Maximum temperature was reduced from
-      <strong>66.01°C</strong> for N = 28,
-      H = 26 mm to <strong>54.91°C</strong>,
-      corresponding to an
-      <strong>11.10°C (~16.8%) reduction</strong>.
-
-    </li>
-
-
-    <li>
-
-      The optimized configuration produced an
-      average airflow velocity of
-      <strong>1.44 m/s</strong>, compared with
-      1.18 m/s for the N = 28, H = 26 mm case.
-
-    </li>
-
-
-    <li>
-
-      The average temperature decreased from
-      <strong>48.09°C</strong> for N = 28,
-      H = 26 mm to approximately
-      <strong>43.18°C</strong> for N = 36,
-      H = 34 mm.
-
-    </li>
-
-  </ul>
-
-
-  <p>
-
-    <strong>Insight:</strong>
-
-    Increasing fin number and height initially
-    improves heat dissipation by increasing the
-    available heat-transfer area. However, beyond
-    the optimum fin density, increased flow
-    resistance and reduced effective airflow
-    between closely spaced fins limit the cooling
-    improvement. The <strong>N = 36, H = 34 mm</strong>
-    configuration provides a balance between
-    heat-transfer area and airflow distribution
-    within the enclosed heat sink.
-
-  </p>
-
-
-  <div class="image-grid">
-
-
-    <div class="image-item">
-
-      <img
-        src="IGBT_T3.png"
-        alt="Cross-sectional temperature distribution of IGBT heat sink"
-      >
-
-      <div class="img-caption">
-
-        Cross-sectional temperature distribution
-        showing cooling of the IGBT heat sinks
-
-      </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="IGBT_T1.png"
-        alt="Top view temperature distribution of IGBT heat sink"
-      >
-
-      <div class="img-caption">
-
-        Top-view temperature distribution
-        through the fin channels
-
-      </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="IGBT_V.png"
-        alt="Velocity distribution through IGBT heat sink fin channels"
-      >
-
-      <div class="img-caption">
-
-        Velocity distribution showing forced airflow
-        through the top and bottom fin channels
-
-      </div>
-
-    </div>
-
-
-    <div class="image-item">
-
-      <img
-        src="IGBT_D.png"
-        alt="Thermal optimization of IGBT heat sink fin number and height"
-      >
-
-      <div class="img-caption">
-
-        Thermal optimization of fin number and
-        fin height
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-</div>
-
-  </div>
-
 </section>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+</main>
 
 <footer>
-
-  <p>
-
-© 2026 Ashutosh Vishwakarma |
-
-
-  </p>
-
+  <div class="wrap">© 2026 Ashutosh Vishwakarma</div>
 </footer>
 
+<!-- Lightbox -->
+<dialog id="lb" aria-label="Enlarged project image">
+  <button class="close" type="button">Close</button>
+  <img alt="">
+  <p></p>
+</dialog>
+
+<script>
+/* Mobile menu */
+const burger=document.querySelector('.burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded',false)}});
+
+/* Scroll reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Active nav link */
+const links=[...menu.querySelectorAll('a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>so.observe(s));
+
+/* Lightbox */
+const lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCap=lb.querySelector('p');
+document.querySelectorAll('.shot').forEach(b=>b.addEventListener('click',()=>{
+  const img=b.querySelector('img');
+  lbImg.src=img.src;lbImg.alt=img.alt;lbCap.textContent=b.parentElement.querySelector('figcaption').textContent;
+  lb.showModal();
+}));
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('close'))lb.close()});
+</script>
 </body>
 </html>
